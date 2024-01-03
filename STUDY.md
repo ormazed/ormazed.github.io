@@ -6,18 +6,16 @@
 ###    * CCNA   
 ####    * AWS   
 ---
-## 2. 인프라   
-###    * DevOps   
+## 2. 인프라(DevOps)
 ####    * DOCKER   
 ####    * ShellScript   
 ####    * Redis   
 ####    * Nginx   
 ####    * Kafka     
 ---
-## 3. 언어
-###    * Language   
+## 3. 개발언어   
 ####    * Java
-###         *  Multi Threading    
+####         *  Multi Threading    
 ####    * Python
 ---
 ## 4. 각종 tool
