@@ -14,9 +14,10 @@
 > Kafka     
 ---
 ## 3. 개발언어   
-> Java
->    *  Multi Threading    
 > Python
+> Java
+>    *  Multi Threading      
+
 ---
 ## 4. 각종 tool
 > APM (Scouter, Jennifer)   
