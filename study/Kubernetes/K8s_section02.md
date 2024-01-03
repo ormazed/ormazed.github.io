@@ -101,5 +101,20 @@ Loading mirror speeds from cached hostfile
 Kubernetes Engine\Workloads 에서 작업이 가능하다   
 ---
 ## Stemp 13 쿠버네티스 아키텍처 이해하기 - Masger Node 와 Worker Node   
+### Master Node
+- etcd
+- kube-apiserver
+- kube-scheduler
+- kube-controller-manager   
+### Worker Node   
+- kubelet (Node Agent)
+- kube-proxy (Networking Component)
+- CRI (Container Runtime)
+- PODS
 
+#### Quiz   
+Q1. 마스터 노드가 Applcation 을 직접 운영하는가.   
+Q2. Docker 외의 다른 방법으로 Kubernetes 운영이 가능할까?   
+Q3. 마스터 노드가 Down 되면 Application 도 Down 될까?   
 
+> kubectl get componentstatuses 명령어를 사용하면 현재 서버에 적용된 Kubernetes Components 의 상태 확인이 가능하다.
