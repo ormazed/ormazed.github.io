@@ -14,8 +14,8 @@
 > Kafka     
 ---
 ## 3. 개발언어   
-> Python
-> Java
+> Python   
+> Java   
 >    *  Multi Threading      
 
 ---
