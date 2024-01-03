@@ -57,9 +57,10 @@ CRITICA ACTION REQUIRED gke-gcloud-auth-plugin, which is needed for continued us
 gke-gcloud-auth-plugin for use with kubectl by following
 https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke   
 ```
-> 해결1(docs 참고) gke-gcloud-auth-plugin 설치   
+> 해결1(docs 참고) gke-gcloud-auth-plugin 설치
+```
 yum install google-cloud-sdk-gke-gcloud-auth-plugin   
-
+```
 > 에러발생2   
 ```
 Transaction check error:
@@ -71,11 +72,13 @@ Transaction check error:
 
 Error Summary
 ```
-> 해결2   
+> 해결2
+```
 yum shell   
 > remove google-cloud-cli   
 > install google-cloud-sdk   
-> run   
+> run
+```   
 ```
 [root@ldy0803 ~]# yum shell
 Loaded plugins: fastestmirror, langpacks
@@ -91,7 +94,7 @@ Loading mirror speeds from cached hostfile
 ---> Package google-cloud-sdk.x86_64 0:458.0.1-1 will be installed
 --> Finished Dependency Resolution
 ...(Skip)...
-```
+```   
 ---
 ## Step 12 구글 클라우드 콘솔의 GKE 복습   
 ### Google Cloud Platform   
