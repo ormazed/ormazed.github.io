@@ -98,7 +98,7 @@ Loading mirror speeds from cached hostfile
 ---
 ## Step 12 구글 클라우드 콘솔의 GKE 복습   
 ### Google Cloud Platform   
-Kubernetes Engine\Workloads 에서 작업이 가능하다   
+* Kubernetes Engine\Workloads 에서 작업이 가능하다   
 ---
 ## Stemp 13 쿠버네티스 아키텍처 이해하기 - Masger Node 와 Worker Node   
 ### Master Node
