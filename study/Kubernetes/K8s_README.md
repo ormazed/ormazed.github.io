@@ -1,3 +1,33 @@
+# Section02 쿠버네티스와 구글 쿠버네티스 엔진(GKE) 시작하기
+## Step03 GKE 생성하기
+### Google Cloud UI 상에서 생성하는 방법 외 개별 서버에서 접속하는 방법
+* 설치된 서버에 gcloud 명령어가 없는 상태
+```
+sudo yum list gcloud
+```
+
+```
+sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
+[google-cloud-cli]
+name=Google Cloud CLI
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el9-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
+```
+
+```
+ls -al /etc/yum.repos.d/google-cloud-sdk.repo
+```
+
+```
+sudo yum update
+```   
+* 출처 : https://cloud.google.com/sdk/docs/install-sdk?hl=ko#rpm
+
+
 ---
 (시도1)   
 gcloud container clusters get credentials in8minutes-cluster --zone us-centrall-a -project theta-style-403004   
@@ -50,7 +80,7 @@ Loading mirror speeds from cached hostfile
 ```
 ---
 ## Step 12 구글 클라우드 콘솔의 GKE 복습   
-ㅇ Google Cloud Platform   
+### Google Cloud Platform   
 Kubernetes Engine\Workloads 에서 작업이 가능하다   
 ---
 ## Stemp 13 쿠버네티스 아키텍처 이해하기 - Masger Node 와 Worker Node   
