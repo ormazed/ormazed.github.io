@@ -1,4 +1,4 @@
-#Section03 GKE-스프링 부트 Hello World REST API 로 쿠버네티스와 도커 사용하기
+# Section03 GKE-스프링 부트 Hello World REST API 로 쿠버네티스와 도커 사용하기
 * 코드 출처 : https://github.com/in28minutes/kubernetes-crash-course
 ## Step 01 - 첫 3개 스프링 부트 프로젝트 Eclipse로 불러오기
 ## Step 02 - 로컬 환경에 스프링 부트 Hello World 기반 REST API 01 설치하기
