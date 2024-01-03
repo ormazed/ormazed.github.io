@@ -1,10 +1,10 @@
 # STUDY LIST   
 ## 1. 자격증   
-SQLD   
-LinuxMaster1급   
-CSTS   
-CCNA   
-AWS   
+> SQLD   
+> LinuxMaster1급   
+> CSTS   
+> CCNA   
+> AWS   
 ---
 ## 2. 인프라(DevOps)
 DOCKER   
