@@ -2,6 +2,7 @@
 ## Step03 GKE 생성하기
 ### Google Cloud UI 상에서 생성하는 방법 외 개별 서버에서 접속하는 방법
 * 설치된 서버에 gcloud 명령어가 없는 상태
+#### (1) gcloud repo 설치
 ```
 sudo yum list gcloud
 ```
@@ -27,8 +28,21 @@ sudo yum update
 ```   
 * 출처 : https://cloud.google.com/sdk/docs/install-sdk?hl=ko#rpm
 
-
+#### (2) gcloud 설치
+```
+sudo yum install google-cloud-cli
+```   
+#### (3) GKE Cluster 접속 시도
+```
+gcloud container clusters get-credentials 클러스터ID --zone 설치ZONE명 --project 프로젝트ID
+```
+* 확인방법 : Google Cloud\Kubernetes Engine\클러스터\클러스터에 연결   
+#### (4) 확인
+```
+kubectl get pod
+```   
 ---
+### [ 설치중 발생한 에러 ]
 (시도1)   
 gcloud container clusters get credentials in8minutes-cluster --zone us-centrall-a -project theta-style-403004   
 gcloud auth login    
