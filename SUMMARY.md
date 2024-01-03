@@ -5,8 +5,8 @@
     * [TOMCAT](work/tomcat/TOMCAT.md)
         * [TOMCAT SSL 설정방법](work/tomcat/note/ssl_note.md)
 * [STUDY](STUDY.md)
-    * [DOCKER](study/Docker/DOCKER_README.md)
-        * [인프런](study/Docker/Inflearn_DOCKER_README.md)
+    * [DOCKER](study/docker/DOCKER_README.md)
+        * [인프런](study/docker/Inflearn_DOCKER_README.md)
     * [Kubernetes](study/Kubernetes/K8s_README.md)
     * [ShellScript]
     * [JAVA]
