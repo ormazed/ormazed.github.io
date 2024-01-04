@@ -88,7 +88,7 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
 
 ```
-> 해결1 :   
+> 해결1-1 :   
 > pom.xml 파일을 찾지 못해서 발생하는 현상이었다.   
 > 명령어를 실행할 때 pom.xml 파일이 있는 경로에서 명령어를 실행하면 된다.   
 
@@ -117,16 +117,18 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
 [ERROR] For more information about the errors and possible solutions, please read the following articles:
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
 ```
-> 해결2 :   
-> 설치한 Virtual Machin 에서 기본 제공하고 있던 java 가 jdk 가 아니라 jre 였다.
-> 위 기능을 사용하기 위해서는 jdk 설치가 필요하다.
-> yum 으로 적절한 jdk 를 설치한 다음 환경변수를 적절히 변경해주면 해소가 가능해진다.
-> `docker image ls` 명령어를 사용하여 maven 으로 build 한 jar 파일의 이미지를 확인할 수 있다.
+> 해결 1-2 :   
+> 설치한 Virtual Machin 에서 기본 제공하고 있던 java 가 jdk 가 아니라 jre 였다.   
+> 위 기능을 사용하기 위해서는 jdk 설치가 필요하다.   
+> yum 으로 적절한 jdk 를 설치한 다음 환경변수를 적절히 변경해주면 해소가 가능해진다.   
+> `docker image ls` 명령어를 사용하여 maven 으로 build 한 jar 파일의 이미지를 확인할 수 있다.   
 
 
 ###### 추가  
 > 강의에서는 맥북을 쓰는 지 그냥 경로에다가 docker 랑 mvn 명령어를 사용하는 게 보였는데,   
-> 나 같은 경우에 sts 는 windows local PC 에서 돌리고 Docker 는 VMWare Linux 랑 GCP Linux를 사용해서 돌리고 있었던 지라.   
+
+> 나 같은 경우에 sts 는 windows local PC 에서 돌리고 Docker 는 VMWare Linux 랑 GCP Linux를 사용해서 돌리고 있었다.  
+
 > sts 를 위한 Windows 환경을 Local PC 에다가 새로 구성해야하나 고민하다가 걍 파일을 VMWare Linux 환경에다가 업로드해서 시도해봤는데 딱히 별문제 없이 잘 되는 것 같다.   
 -------------------------------------------------------------------------------------------
 #### 2. 생성한 Docker image 를 Docker Hub 에 upload
@@ -147,6 +149,8 @@ $ docker push ormazed/hello-world-rest-api:0.0.4-SNAPSHOT
 The push refers to repository [docker.io/ormazed/hello-world-rest-api]
 An image does not exist locally with the tag: ormazed/hello-world-rest-api
 ```
+
+###### 해결2-2
 : 알고보니까 pom.xml 의 <configuration>/<repository> 에 자신의 Docker Hub USER 로 변경해주는 작업이 필요!!!
 : 변경 후 다시 이미지를 생성하면 된다.
 
