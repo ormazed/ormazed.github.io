@@ -29,7 +29,7 @@ Docker Container 내부나 Kubernetes 에서 앱을 실행하면 런타임 환�
 ```
 private static final String HOST_NAME = "HOSTNAME";
 ```
-> (예시) 서비스가 어디서 실행 중인지를 HOSTNAME 으로 알아볼 수 있도록 함.
+> (예시) 서비스가 어디서 실행 중인지를 HOSTNAME 으로 알아볼 수 있도록 함.   
 
 * pom.xml : dockerfile-maven-plugin
 <details>
@@ -64,9 +64,12 @@ private static final String HOST_NAME = "HOSTNAME";
 
 	</build>
 ```
-</details>
+</details>   
+
+### 실습
 
 docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝트에 대한 docker 이미지를 구축하는 걸 목적으로 하게 된다.
+
 ```
 <configuration>
    <repository>in28min/${project.name}</repository> // 이미지/프로젝트명
@@ -74,6 +77,23 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
       <skipDockerInfo>true</skipDockerInfo>
 </configuration>
 ```
+
+> mvn clean install
+
+
+
+* 에러극복
+```
+[ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/engn001/k8s/app/app). Please verify you invoked Maven from the correct directory. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
+
+```
+> 해결방법 : pom.xml 파일을 찾지 못해서 발생하는 현상이었다. 명령어를 실행할 때 pom.xml 파일이 있는 경로에서 명령어를 실행하면 된다.
 
 
 ---
