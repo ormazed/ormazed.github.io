@@ -78,11 +78,11 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
 </configuration>
 ```
 
-> mvn clean install
-* [mvn 설치방법](https://github.com/ormazed/ormazed.github.io/blob/main/work/info/install_tip.md)
- * mvn 이랑 nvm 이랑 착각해서 ㅋㅋㅋㅋㅋ
+> mvn clean install   
+* [mvn 설치방법](https://github.com/ormazed/ormazed.github.io/blob/main/work/info/install_tip.md)   
+	    * mvn 이랑 nvm 이랑 착각해서 ㅋㅋㅋㅋㅋ   
 
-* 에러극복
+* 에러극복   
 ```
 [ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/engn001/k8s/app/app). Please verify you invoked Maven from the correct directory. -> [Help 1]
 [ERROR]
