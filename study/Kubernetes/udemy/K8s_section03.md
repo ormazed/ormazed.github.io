@@ -32,6 +32,7 @@ private static final String HOST_NAME = "HOSTNAME";
 > (예시) 서비스가 어디서 실행 중인지를 HOSTNAME 으로 알아볼 수 있도록 함.   
 
 * pom.xml : dockerfile-maven-plugin
+
 <details>
 <summary>pom.xml_content</summary>
 
@@ -67,22 +68,15 @@ private static final String HOST_NAME = "HOSTNAME";
 </details>   
 
 ### 실습
-
+#### 1. HelloWorld-REST-API Applicaton 용 img 생성하기
 docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝트에 대한 docker 이미지를 구축하는 걸 목적으로 하게 된다.
-
-```
-<configuration>
-   <repository>in28min/${project.name}</repository> // 이미지/프로젝트명
-      <tag>${project.version}</tag> // 프로젝트 버전
-      <skipDockerInfo>true</skipDockerInfo>
-</configuration>
-```
 
 > mvn clean install   
 * [mvn 설치방법](https://github.com/ormazed/ormazed.github.io/blob/main/work/info/install_tip.md)   
-	    * mvn 이랑 nvm 이랑 착각해서 ㅋㅋㅋㅋㅋ   
-
-###### 에러1   
+	    * mvn 이랑 nvm 이랑 착각해서 ㅋㅋㅋㅋㅋ
+  
+-------------------------------------------------------------------------------------------
+###### 에러1-1   
 
 ```
 [ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/engn001/k8s/app/app). Please verify you invoked Maven from the correct directory. -> [Help 1]
@@ -98,7 +92,7 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
 > pom.xml 파일을 찾지 못해서 발생하는 현상이었다.   
 > 명령어를 실행할 때 pom.xml 파일이 있는 경로에서 명령어를 실행하면 된다.   
 
-###### 에러2   
+###### 에러1-2   
 
 ```
 [ERROR] COMPILATION ERROR :
@@ -134,6 +128,40 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
 > 강의에서는 맥북을 쓰는 지 그냥 경로에다가 docker 랑 mvn 명령어를 사용하는 게 보였는데,   
 > 나 같은 경우에 sts 는 windows local PC 에서 돌리고 Docker 는 VMWare Linux 랑 GCP Linux를 사용해서 돌리고 있었던 지라.   
 > sts 를 위한 Windows 환경을 Local PC 에다가 새로 구성해야하나 고민하다가 걍 파일을 VMWare Linux 환경에다가 업로드해서 시도해봤는데 딱히 별문제 없이 잘 되는 것 같다.   
+-------------------------------------------------------------------------------------------
+#### 2. 생성한 Docker image 를 Docker Hub 에 upload
+* Docker Hub 명령어
+```
+docker login -u "자신의 DOCKER_HUB USER"
+docker push "자신의 DOCKER_HUB USER"/hello-world-rest-api:0.0.4-SNAPSHOT
+```
+> 참고 : docker Hub 계정과 관련하여서 접속이 되지 않으면 `docs`(https://docs.docker.com/go/access-tokens/) 를 참고하면 된다.
+
+###### 에러2-1   
+: docker img 를 push 하는 명령어를 사용하였는데 error 가 발생했다.
+
+> docker push ormazed/hello-world-rest-api:0.0.4-SNAPSHOT
+
+```
+$ docker push ormazed/hello-world-rest-api:0.0.4-SNAPSHOT
+The push refers to repository [docker.io/ormazed/hello-world-rest-api]
+An image does not exist locally with the tag: ormazed/hello-world-rest-api
+```
+: 알고보니까 pom.xml 의 <configuration>/<repository> 에 자신의 Docker Hub USER 로 변경해주는 작업이 필요!!!
+: 변경 후 다시 이미지를 생성하면 된다.
+
+* pom.xml : dockerfile-maven-plugin
+```
+<configuration>
+   <repository>ormazed/${project.name}</repository> // 이미지/프로젝트명 ( 변경 전 in28min -> ormazed)
+      <tag>${project.version}</tag> // 프로젝트 버전
+      <skipDockerInfo>true</skipDockerInfo>
+</configuration>
+```
+> docker clean install
+> docker image ls
+> docker push kandan7/hello-world-rest-api:0.0.4-SNAPSHOT
+
 
 ---
 ## Step 04 - 구글 클라우드 설치하기
