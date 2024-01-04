@@ -19,7 +19,7 @@ source ~/.bashrc
 
 CentOS7 환경에서 Maven 을 yum 으로 설치하면 `3.0.5` 가 가능하다.
 
-Q. docker 버전과 maven 버전의 호환성 문제는 없을까?
+`Q. docker 버전과 maven 버전의 호환성 문제는 없을까?`
 
 * maven 압축 파일 다운로드   
 ```
