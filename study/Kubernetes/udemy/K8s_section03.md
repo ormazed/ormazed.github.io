@@ -79,8 +79,8 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
 ```
 
 > mvn clean install
-
-
+* [mvn 설치방법](https://github.com/ormazed/ormazed.github.io/blob/main/work/info/install_tip.md)
+ * mvn 이랑 nvm 이랑 착각해서 ㅋㅋㅋㅋㅋ
 
 * 에러극복
 ```
