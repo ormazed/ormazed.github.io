@@ -82,7 +82,7 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
 * [mvn 설치방법](https://github.com/ormazed/ormazed.github.io/blob/main/work/info/install_tip.md)   
 	    * mvn 이랑 nvm 이랑 착각해서 ㅋㅋㅋㅋㅋ   
 
-* 에러극복   
+* 에러1   
 ```
 [ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/engn001/k8s/app/app). Please verify you invoked Maven from the correct directory. -> [Help 1]
 [ERROR]
@@ -93,10 +93,38 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
 
 ```
-> 해결방법 :   
+> 해결1 :   
 > pom.xml 파일을 찾지 못해서 발생하는 현상이었다.   
 > 명령어를 실행할 때 pom.xml 파일이 있는 경로에서 명령어를 실행하면 된다.   
 
+* 에러2
+```
+[ERROR] COMPILATION ERROR :
+[INFO] -------------------------------------------------------------
+[ERROR] No compiler is provided in this environment. Perhaps you are running on a JRE rather than a JDK?
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  09:23 min
+[INFO] Finished at: 2024-01-05T00:11:18+09:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project 01-hello-world-rest-api: Compilation failure
+[ERROR] No compiler is provided in this environment. Perhaps you are running on a JRE rather than a JDK?
+[ERROR]
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+```
+> 해결2 :   
+> 설치한 Virtual Machin 에서 기본 제공하고 있던 java 가 jdk 가 아니라 jre 였다.
+> 위 기능을 사용하기 위해서는 jdk 설치가 필요하다.
+> yum 으로 적절한 jdk 를 설치한 다음 환경변수를 적절히 변경해주면 해소가 가능해진다.
 
 ---
 ## Step 04 - 구글 클라우드 설치하기
