@@ -3,8 +3,9 @@
 ###### 참고용으로만 읽어주세요
 
 Tomcat 의 server.xml 파일을 확인하면 HTTP/1.1 을 사용할 때 SSL 설정을 하는 Connector 구문이 두 가지 확인가능하다.
+
 ## 2. NIO 방식 vs ARP 방식
-* NIO Implementation 방식
+* `NIO Implementation` 방식
 ```
     <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
                maxThreads="150" SSLEnabled="true"
@@ -19,7 +20,7 @@ Tomcat 의 server.xml 파일을 확인하면 HTTP/1.1 을 사용할 때 SSL 설�
 
 
 
-* APR/native implementation 방식(HTTP/2 방식 기반)
+* `APR/native implementation` 방식(HTTP/2 방식 기반)
 ```
     <Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
                maxThreads="150" SSLEnabled="true"
