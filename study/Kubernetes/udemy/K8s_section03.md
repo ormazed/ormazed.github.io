@@ -33,7 +33,7 @@ private static final String HOST_NAME = "HOSTNAME";
 
 * pom.xml : dockerfile-maven-plugin
 <details>
-<summary>접기/펼치기</summary>
+<summary>pom.xml_content</summary>
 
 ```
 <build>
