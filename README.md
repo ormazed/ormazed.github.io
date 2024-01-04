@@ -69,8 +69,24 @@ __double underscores__
 |**강조**|
 |<span style="color:red">강조3</span>|
 
----
+
 __출처 : https://gist.github.com/ihoneymon/652be052a0727ad59601__
 
+---
 
+## 8) 접기/펼치기 
+```
+<details>
+<summary>접기/펼치기</summary>
+
+<!-- summary 아래 한칸 공백 두어야함 -->
+## 접은 제목
+접은 내용
+</details>
+
+
+```
+* 출처: https://young-cow.tistory.com/44 [어린소:티스토리]
+
+  
 *가장 중요한 것은 배포하더라도 화면반영까지 시간이 제법 소요된다는 거다.*
