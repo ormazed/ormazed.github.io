@@ -93,7 +93,9 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
 
 ```
-> 해결방법 : pom.xml 파일을 찾지 못해서 발생하는 현상이었다. 명령어를 실행할 때 pom.xml 파일이 있는 경로에서 명령어를 실행하면 된다.
+> 해결방법 :
+> pom.xml 파일을 찾지 못해서 발생하는 현상이었다.
+> 명령어를 실행할 때 pom.xml 파일이 있는 경로에서 명령어를 실행하면 된다.
 
 
 ---
