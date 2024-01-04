@@ -82,7 +82,8 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
 * [mvn 설치방법](https://github.com/ormazed/ormazed.github.io/blob/main/work/info/install_tip.md)   
 	    * mvn 이랑 nvm 이랑 착각해서 ㅋㅋㅋㅋㅋ   
 
-* 에러1   
+###### 에러1   
+
 ```
 [ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/engn001/k8s/app/app). Please verify you invoked Maven from the correct directory. -> [Help 1]
 [ERROR]
@@ -97,7 +98,8 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
 > pom.xml 파일을 찾지 못해서 발생하는 현상이었다.   
 > 명령어를 실행할 때 pom.xml 파일이 있는 경로에서 명령어를 실행하면 된다.   
 
-* 에러2
+###### 에러2   
+
 ```
 [ERROR] COMPILATION ERROR :
 [INFO] -------------------------------------------------------------
@@ -126,10 +128,10 @@ docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝
 > 위 기능을 사용하기 위해서는 jdk 설치가 필요하다.
 > yum 으로 적절한 jdk 를 설치한 다음 환경변수를 적절히 변경해주면 해소가 가능해진다.
 
-
-+ 강의에서는 맥북을 쓰는 지 그냥 경로에다가 docker 랑 mvn 명령어를 사용하는 게 보였는데,
-+ 나 같은 경우에 sts 는 windows local PC 에서 돌리고 Docker 는 VMWare Linux 랑 GCP Linux를 사용해서 돌리고 있었던 지라.
-+ sts 를 위한 Windows 환경을 Local PC 에다가 새로 구성해야하나 고민하다가 걍 파일을 VMWare Linux 환경에다가 업로드해서 시도해봤는데 딱히 별문제 없이 잘 되는 것 같다.
+###### 추가  
+> 강의에서는 맥북을 쓰는 지 그냥 경로에다가 docker 랑 mvn 명령어를 사용하는 게 보였는데,   
+> 나 같은 경우에 sts 는 windows local PC 에서 돌리고 Docker 는 VMWare Linux 랑 GCP Linux를 사용해서 돌리고 있었던 지라.   
+> sts 를 위한 Windows 환경을 Local PC 에다가 새로 구성해야하나 고민하다가 걍 파일을 VMWare Linux 환경에다가 업로드해서 시도해봤는데 딱히 별문제 없이 잘 되는 것 같다.   
 
 ---
 ## Step 04 - 구글 클라우드 설치하기
