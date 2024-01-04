@@ -37,12 +37,8 @@ private static final String HOST_NAME = "HOSTNAME";
 
 ```
 <build>
-		<finalName>hello-world-rest-api</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+...(중략)...
+
 			<!-- Docker -->
 			<plugin>
 				<groupId>com.spotify</groupId>
@@ -70,6 +66,14 @@ private static final String HOST_NAME = "HOSTNAME";
 ```
 </details>
 
+docker 를 사용하는 프로젝트에서 mvn 을 설치하면 특정 프로젝트에 대한 docker 이미지를 구축하는 걸 목적으로 하게 된다.
+```
+<configuration>
+   <repository>in28min/${project.name}</repository> // 이미지/프로젝트명
+      <tag>${project.version}</tag> // 프로젝트 버전
+      <skipDockerInfo>true</skipDockerInfo>
+</configuration>
+```
 
 
 ---
