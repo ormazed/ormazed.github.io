@@ -103,6 +103,35 @@ f1b5933fe4b5: Layer already exists
 
 > 해결책   
 알고싶다 나도
+
+하나 건졌다
+vi /etc/docker/daemon.jar 인가 여기서 debug level 을 변경하고 systemctl status docker -l 을 하다가   
+> level=error msg="Not continuing with push after error: context canceled"     
+위와 같은 메세지를 찾았다. 검색하니까 나랑 동일한 현상인 케이스가 보인다.   
+https://forums.docker.com/t/docker-push-to-docker-io-hub-hangs-as-waiting-with-no-error-or-timeout/9073/14   
+journalctl -f -u docker.service   
+해서 로그를 보는데, 별로 내용이 안 보인다.. 아까 error 뜨길래 또 뜰줄 알고 systemctl restart docker 도 했는데 흠..  
+
+위의 경로에서 가보라는 대로 따라가서 내용을 참고해보니 docker proxy 관련 부분이 원인이라고 한다 흠..   
+https://github.com/distribution/distribution/issues/2147   
+
+https://docs.docker.com/config/daemon/systemd/   
+
+아 ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ   
+안된다 ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ   
+
+https://github.com/distribution/distribution/issues/2147#issuecomment-273116755   
+여기서 시키는 대로 
+/etc/systemd/system/docker.service.d/http-proxy.conf 이것도 만들고 했는데 ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ   
+
+
+  
+https://docs.docker.com/config/daemon/systemd/
+https://docs.docker.com/config/daemon/#configure-the-docker-daemon
+https://confluence.curvc.com/pages/viewpage.action?pageId=16450218
+에이씨 안해
+
+
 ---
 
 
