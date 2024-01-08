@@ -133,11 +133,28 @@ https://confluence.curvc.com/pages/viewpage.action?pageId=16450218
 
 2024-01-08
 에이씨 내가 뭘또해야돼
-(1) 알약도 껐고 selinux 설정도 diabled 했고 firewalld 도 꺼봤고 --> 실패
-(2) 테스트하던 이미지 문제인가해서 다른 내용의 Dockerfile 로 생성한 이미지로 push 도 해봤고 --> 실패 : 기존 이미지 문제가 아니라, 뭔가가 있다.
-(3) 위에서 시키는 대로 proxy 어쩌구도 해봤고
-(4) 재기동은 시시때때로 하고
-(5) 버전문제인가 싶어서 1.24 에서 1.13ㄲ지 내려도 가보고
+(1) 알약도 껐고 selinux 설정도 diabled 했고 firewalld 도 꺼봤고 --> 실패   
+(2) 테스트하던 이미지 문제인가해서 다른 내용의 Dockerfile 로 생성한 이미지로 push 도 해봤고 --> 실패 : 기존 이미지 문제가 아니라, 뭔가가 있다.   
+(3) 위에서 시키는 대로 proxy 어쩌구도 해봤고   
+(4) 재기동은 시시때때로 하고   
+(5) 버전문제인가 싶어서 1.24 에서 1.13ㄲ지 내려도 가보고   
+ 
+뭐냐..;; 방금 전에 진짜 마지막이다라고 하면서 repository 부터 싹 다 새로 생성했는데, 여기서는 또 된다..?    
+```
+[root@ldy0803 docker]# diff Dockerfile*
+1,4c1,3
+< FROM wordpress:latest   <-- 됨
+< RUN echo "good~"
+< EXPOSE 80
+<
+---
+> FROM ubuntu:latest <-- 안 됨.
+> RUN apt update
+> RUN apt install -y git
+```
+
+되는 건 또 왜 되고 안되는 건 진짜 왜 안되냐고... 사람 미쳐버리겠네   
+일단 변화가 생겼으니 다시 간다.
 
 
 
