@@ -4,8 +4,8 @@
 ## Coludnot commit with auto-commit set on
 > `This is an intentional change in the Oracle JDBC driver 12c to support the JDBC specification`   
 
-* throw SQLException when Connection.commit() / Connecction.rollback() is invoked when auto-commit is true
-auto-comiit 이 true 일 때  Connection.commit() / Connection.rollback() 이 동작하게 될 경우 발생한다.   
+* throw SQLException when Connection.commit() / Connecction.rollback() is invoked when auto-commit is true   
+* auto-comiit 이 true 일 때  Connection.commit() / Connection.rollback() 이 동작하게 될 경우 발생한다.   
 
 (sol)
 > `-Doracle.jdbc.autoCommitSpecCompliant=false`
