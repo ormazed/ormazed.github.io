@@ -12,7 +12,7 @@
    
 
 
-
+---
 ### 추가
 #### createStatement vs preparedStatement
 ##### createStatement    
@@ -22,3 +22,4 @@ DB 에는 Optimizer 가 있어서 세션에서 읽어들이는 sql 에 대해 di
 
 
 ##### preparedStatement
+
