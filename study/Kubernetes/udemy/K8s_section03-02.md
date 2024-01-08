@@ -39,31 +39,28 @@ private static final String HOST_NAME = "HOSTNAME";
 ```
 <build>
 ...(중략)...
-
-			<!-- Docker -->
-			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>1.4.6</version>
-				<executions>
-					<execution>
-						<id>default</id>
-						<goals>
-							<goal>build</goal>
-							<!-- <goal>push</goal> -->
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<repository>in28min/${project.name}</repository>
-					<tag>${project.version}</tag>
-					<skipDockerInfo>true</skipDockerInfo>
-				</configuration>
-			</plugin>
-
-		</plugins>
-
-	</build>
+		<!-- Docker -->
+		<plugin>
+			<groupId>com.spotify</groupId>
+			<artifactId>dockerfile-maven-plugin</artifactId>
+			<version>1.4.6</version>
+			<executions>
+				<execution>
+					<id>default</id>
+					<goals>
+						<goal>build</goal>
+						<!-- <goal>push</goal> -->
+					</goals>
+				</execution>
+			</executions>
+			<configuration>
+				<repository>in28min/${project.name}</repository>
+				<tag>${project.version}</tag>
+				<skipDockerInfo>true</skipDockerInfo>
+			</configuration>
+		</plugin>
+	</plugins>
+</build>
 ```
 </details>   
 
@@ -92,13 +89,22 @@ docker push "자신의 DOCKER_HUB USER"/hello-world-rest-api:0.0.4-SNAPSHOT
 ```
 > 참고 : docker Hub 계정과 관련하여서 접속이 되지 않으면 `docs`(https://docs.docker.com/go/access-tokens/) 를 참고하면 된다.
 
-
 ---
 ## Step 04 - 구글 클라우드 설치하기
----
+https://cloud.google.com/sdk/docs/install?hl=ko
+
 ## Step 05 - Kubectl 설치하기
 ---
+
 ## Step 06 - 스프링 부트 Hello World 기반 REST API 01 쿠버네티스에 배치하기
+> kubectl set image deployment hello-world-rest-api hello-world-rest-api=kandan7/hello-world-rest-api:0.0.4-SNAPSHOT
+
+> kubectl rollout history deployment hello-world-rest-api --record=true   
+
+> kubectl rollout status deployment hello-world-rest-api
+
+>  kubectl rollout status deployment hello-world-rest-api
+
 ---
 ## Step 07 - 배치 및 서비스를 위한 쿠버네티스 YAML 설정 생성하기
 ---
