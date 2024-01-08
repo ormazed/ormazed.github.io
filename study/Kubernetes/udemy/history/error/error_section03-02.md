@@ -140,21 +140,28 @@ https://confluence.curvc.com/pages/viewpage.action?pageId=16450218
 (5) 버전문제인가 싶어서 1.24 에서 1.13ㄲ지 내려도 가보고   
  
 뭐냐..;; 방금 전에 진짜 마지막이다라고 하면서 repository 부터 싹 다 새로 생성했는데, 여기서는 또 된다..?    
+https://nevertrustbrutus.tistory.com/140   
+
 ```
 [root@ldy0803 docker]# diff Dockerfile*
 1,4c1,3
-< FROM wordpress:latest   <-- 됨
+< FROM wordpress:latest   <-- 됨(ormazed/hubtest)
 < RUN echo "good~"
 < EXPOSE 80
 <
 ---
-> FROM ubuntu:latest <-- 안 됨.
+> FROM ubuntu:latest <-- 안 됨(ormazed/hello-world-rest-api).
 > RUN apt update
 > RUN apt install -y git
 ```
 
 되는 건 또 왜 되고 안되는 건 진짜 왜 안되냐고... 사람 미쳐버리겠네   
 일단 변화가 생겼으니 다시 간다.
+
+ormazed/hello-world-rest-api 를 다시 생성해서 push 테스트를 해봤는데도 여전히 안된다.
+이쯤되면 docker 계정 문제나 통신 문제가 아니라 repository 애 이미지를 넣는 그 자체가 문제인 거 같은데
+이걸 어디서부터 보면 좋을까
+코드는 내가 작성한게 아니라 받아쓴거라서..
 
 
 
