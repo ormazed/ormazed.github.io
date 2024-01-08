@@ -97,13 +97,34 @@ https://cloud.google.com/sdk/docs/install?hl=ko
 ---
 
 ## Step 06 - 스프링 부트 Hello World 기반 REST API 01 쿠버네티스에 배치하기
-> kubectl set image deployment hello-world-rest-api hello-world-rest-api=kandan7/hello-world-rest-api:0.0.4-SNAPSHOT
 
-> kubectl rollout history deployment hello-world-rest-api --record=true   
+> `kubectl set image` hello-world-rest-api hello-world-rest-api=kandan7/hello-world-rest-api:0.0.4-SNAPSHOT     
+>> "hello-world-rest-api" 디플로이먼트의 "kandan7/hello-world-rest-api:0.0.4-SNAPSHOT " 컨테이너 이미지를 업데이트하는 롤링 업데이트   
 
-> kubectl rollout status deployment hello-world-rest-api
+> `kubectl rollout history deployment` hello-world-rest-api --record=true   
+>> 현 리비전을 포함한 디플로이먼트의 이력을 체크   
+                
+> `kubectl rollout undo` deployment/frontend   
+>> 이전 디플로이먼트로 롤백   
+> `kubectl rollout undo` deployment/frontend --to-revision=2   
+>> 특정 리비전으로 롤백   
 
->  kubectl rollout status deployment hello-world-rest-api
+> `kubectl rollout status deployment` hello-world-rest-api   
+> `kubectl rollout status` -w deployment/frontend   
+>> 완료될 때까지 "frontend" 디플로이먼트의 롤링 업데이트 상태를 감시
+> `kubectl rollout restart` deployment/frontend   
+>> "frontend" 디플로이먼트의 롤링 재시작   
+
+참고 : https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+
+watch curl http://PUBLIC_IP:8080/hello-world
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 100    21  100    21    0
+ 0     53      0 --:--:-- --:--:-- --:--:--    53
+Hello World  V2 vrkf5
+```
 
 ---
 ## Step 07 - 배치 및 서비스를 위한 쿠버네티스 YAML 설정 생성하기
