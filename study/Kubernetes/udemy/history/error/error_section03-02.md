@@ -80,9 +80,10 @@ An image does not exist locally with the tag: ormazed/hello-world-rest-api
 ---
 
 ### 에러2-2
->  kubectl rollout status deployment hello-world-rest-api
-	error: deployment "hello-world-rest-api" exceeded its progress deadline
+>  kubectl rollout status deployment hello-world-rest-api   
+>> error: deployment "hello-world-rest-api" exceeded its progress deadline   
 
+https://sonien.tistory.com/7
 
 
 ---
