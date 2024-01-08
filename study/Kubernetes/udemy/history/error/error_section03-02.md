@@ -131,6 +131,17 @@ https://docs.docker.com/config/daemon/#configure-the-docker-daemon
 https://confluence.curvc.com/pages/viewpage.action?pageId=16450218
 에이씨 안해
 
+2024-01-08
+에이씨 내가 뭘또해야돼
+(1) 알약도 껐고 selinux 설정도 diabled 했고 firewalld 도 꺼봤고 --> 실패
+(2) 테스트하던 이미지 문제인가해서 다른 내용의 Dockerfile 로 생성한 이미지로 push 도 해봤고 --> 실패 : 기존 이미지 문제가 아니라, 뭔가가 있다.
+(3) 위에서 시키는 대로 proxy 어쩌구도 해봤고
+(4) 재기동은 시시때때로 하고
+(5) 버전문제인가 싶어서 1.24 에서 1.13ㄲ지 내려도 가보고
+
+
+
+
 
 ---
 
