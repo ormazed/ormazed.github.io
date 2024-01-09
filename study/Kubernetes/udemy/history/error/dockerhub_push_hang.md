@@ -87,5 +87,11 @@ ormazed/hello-world-rest-api 를 다시 생성해서 push 테스트를 해봤는
 어제 push 성공했다는 img 를 가지고 docker tag 명령어를 사용해서 hello-world-rest-api repository 에 업로드를 해봤는데
 정상 업로드가 되는 것이 확인되었다.
 이쯤되면 생성한 이미지가 문제인 게 분명해진다.
+이야~ 드디어 해결했다
+됐다는 이미지의 Dockerfile 을 가져와서 테스트에 사용중인 어플리케이션 소스에다가 넣어서 이미지를 말고 docker hub 에 업로드해보니까
+잘~~~~올라간다.
+기가막히네 아주 그냥
 
+오... 테스트한다고 이것저것 docker hub 에 많이 올렸어서 docker push 한 이미지들을 제거하는 방법을 찾으니까
+repository 제거 방법만 나오네.. 아주.. 빈대 없앤다고 초가삼간 다 태우네 그려..
 
