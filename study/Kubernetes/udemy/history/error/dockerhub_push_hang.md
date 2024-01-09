@@ -83,4 +83,9 @@ ormazed/hello-world-rest-api 를 다시 생성해서 push 테스트를 해봤는
 이걸 어디서부터 보면 좋을까
 코드는 내가 작성한게 아니라 받아쓴거라서..
 
+2024-01-09
+어제 push 성공했다는 img 를 가지고 docker tag 명령어를 사용해서 hello-world-rest-api repository 에 업로드를 해봤는데
+정상 업로드가 되는 것이 확인되었다.
+이쯤되면 생성한 이미지가 문제인 게 분명해진다.
+
 
