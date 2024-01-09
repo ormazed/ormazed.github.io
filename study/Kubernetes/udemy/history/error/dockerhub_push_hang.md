@@ -82,6 +82,7 @@ ormazed/hello-world-rest-api 를 다시 생성해서 push 테스트를 해봤는
 이쯤되면 docker 계정 문제나 통신 문제가 아니라 repository 애 이미지를 넣는 그 자체가 문제인 거 같은데
 이걸 어디서부터 보면 좋을까
 코드는 내가 작성한게 아니라 받아쓴거라서..
+
 ---
 2024-01-09
 어제 push 성공했다는 img 를 가지고 docker tag 명령어를 사용해서 hello-world-rest-api repository 에 업로드를 해봤는데
@@ -94,6 +95,7 @@ ormazed/hello-world-rest-api 를 다시 생성해서 push 테스트를 해봤는
 
 오... 테스트한다고 이것저것 docker hub 에 많이 올렸어서 docker push 한 이미지들을 제거하는 방법을 찾으니까
 repository 제거 방법만 나오네.. 아주.. 빈대 없앤다고 초가삼간 다 태우네 그려..
+
 ---
 2024-01-10   
 아 열심히 작성하던거 노트북 배터리 나가서 날라갔다 승질나..   
