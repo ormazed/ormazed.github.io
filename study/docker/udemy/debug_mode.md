@@ -16,7 +16,8 @@ docker 에서 생성하는 log 의 level 을 낮추고 싶을 떄( 로그 양상
   "debug": true
 }
 
-systemctl restart docker 
+systemctl restart docker
+
 journalctl -xe |grep docker
 
 chatGPT 압도적 감사!
