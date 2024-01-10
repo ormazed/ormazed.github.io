@@ -6,7 +6,7 @@ docker 에서 생성하는 log 의 level 을 낮추고 싶을 떄( 로그 양상
 
 > 방법(1) docker -D
 
-> 방법(2) vi /etc/docker/daemon.json
+> 방법(2) vi /etc/docker/daemon.json   
 {
   "log-driver": "json-file",
   "log-opts": {
