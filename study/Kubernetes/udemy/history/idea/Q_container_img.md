@@ -1,9 +1,11 @@
 ##### 의문 : kubernetes deployment.yaml 의 image 는 어디서 가져오는 것인가
 질문 : 왜 ormazed 가 아니라 in28min 이미지를 가져오는 거지
 
-* 현 상태
-(1) pom.xml 에 이미지를 생성할 때, 이름을 정하는 dockerfile-manve-plugin\configuration\repository 에 `<repository>oramzed/${project.name}</repository>` 라고 작성 => mvn clean install 하여 이미지를 만듦.  
+* 현 상태   
+(1) pom.xml 에 이미지를 생성할 때, 이름을 정하는 dockerfile-manve-plugin\configuration\repository 에 `<repository>oramzed/${project.name}</repository>` 라고 작성 => mvn clean install 하여 이미지를 만듦.
+
 (2) 지금 Docker Hub 에 이미지를 push 가 안되고 있는 상태   
+
 (3) local 에 생성된 이미지는 oramzed/hello-world-rest-api 라는 이름으로 명명.   
 
 이러한 상태에서 생성된 kubernetes pod 를 보니까 in28min/hello-world-rest-api 라고 명명되어 있었다.   
