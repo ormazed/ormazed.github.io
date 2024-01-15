@@ -82,3 +82,28 @@ spring.datasource.username=todos-user
 spring.datasource.password=dummytodos
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL57Dialect
 ```
+
+---
+
+## Stop06
+```
+FATA Version 3.7 of Docker Compose is not supported. Please use version 1, 2 or 3
+>> 3.7 이 어디서 나왔지..?
+>> 설치된 패키지들이랑 kompose 랑 호환성 때문에 안되는 거 같은데. 저 3.7 이 어디서 튀어나온 건지 도저희 모르겠다.
+
+ㅇ 현재 사양
+# docker --version
+Docker version 24.0.7, build afdd53b
+
+# kubectl version -o json
+"v1.27.9-dispatcher"
+
+# kompose version
+1.7.0 (HEAD)
+
+# docker-compose version
+docker-compose version 1.23.2, build 1110ad01
+docker-py version: 3.6.0
+CPython version: 3.6.7
+OpenSSL version: OpenSSL 1.1.0f  25 May 2017
+```
