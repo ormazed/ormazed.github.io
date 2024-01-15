@@ -27,6 +27,7 @@ docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=tod
 
 이전 강의에서는 내장 DB 를 사용하였기 때문에 Application 이 중지되면 내장된 데이터도 같이 사라지지만,
 mysql DB 를 별도로 사용하게 될 경우, DB Server 에서 정보를 관리하기 때문에 Application 의 동작과 독립하여 정보가 보관된다.
+
 ----------------------------------------------------------
 
 (추가)
@@ -119,6 +120,19 @@ docker-compose up
 
 ## Step06. Kompose 활용하여 쿠버네티스 배치 설정 생성하기
 ---
+
+`kompose란?`
+: Docker Compose 를 Kubernetes Contaienr Orchestartors 로 변환해주는 Tool.
+
+```
+yum install epel-release
+yum install -y kompose
+```
+
+참고
+: CentOS7 에서 Kompose 설치방법
+- https://docs.fedoraproject.org/en-US/epel/
+- https://kompose.io/installation/#centos
 
 
 ## Step07. MySQL 및 자바 웹 어플리케이션용 쿠버네티스 YAML 검토
