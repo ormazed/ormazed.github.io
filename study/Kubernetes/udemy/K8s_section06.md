@@ -138,14 +138,40 @@ yum install -y kompose
 ## Step07. MySQL 및 자바 웹 어플리케이션용 쿠버네티스 YAML 검토
 ---
 
+mysql 은 Kubernetes 사용 시 PV/PVC 를 필요로 한다.
+-> 모든 MySQL 데이터를 저장하기 위한 저장소가 필요하기 때문
+
+mysql-deployment.yaml
+```
+args:
+    - "--ignore-db-dir=lost+found" #CHANGE
+```
+: lost+found 파일이 영구저장소에 생성된다.
+: mysql 은 initial 될 때 경로에 디렉터리가 있을 경우 에러를 발생시키기 때문에, --ignore-db-dir 옵션을 사용하여 DB 초기화 때 인식하지 못하도록 한다.
 
 ## Step08. MySQL DB 쿠버네티스 클러스터에 배치하기
 ---
+PV 생성 
+DB --PVC-- PV 로 연결
+Application - DB 연결
 
+```
+The Deployment "mysql" is invalid:
+* spec.selector: Required value
+* spec.template.metadata.labels: Invalid value: map[string]string{"io.kompose.service":"mysql"}: `selector` does not match template `labels`
+```
+: 구버전 yaml 파일에 deployment.yaml 에 selector 가 없어서 발생하는 현상.
 
 ## Step09. 쿠버네티스를 이용한 영구 저장소 사용 - PV & PVC
 ---
 
+`VOLUME`
+: 쿠버네티스 클러스터에서 요청되는 모든 스토리지
+: Volume 을 위해서는 PV 가 필요하다
+: PV 는 외부 스토리지를 클러스터에 매핑하는 방식
+: PVC 는 POD 가 PV 를 요청하는 방식
+
+Volume == PV == PVC == POD
 
 ## Step10. 쿠버네티스로 설정 Maps 사용하기
 ---
