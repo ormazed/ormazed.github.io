@@ -1,4 +1,4 @@
-ㅣ# Section06. MySQL - 웹 어플리케이션으로 K8S & Docker 
+# Section06. MySQL - 웹 어플리케이션으로 K8S & Docker 
 
 ## Step01. MySQL 코드 검토
 ---
@@ -192,13 +192,35 @@ k sacle deployment todo-web-application --replicas=0
 k scale deployment todo-web-application --replicas=1
 
 
+원인을 알 수 없지만 또 발생한 에러
+```
+org.apache,coyote.http11.AbstractHttp11Processor.precess Error parsing HTTP request header
+Notel further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+```
+
 
 ## Step11. 쿠버네티스로 Secrets 사용하기
 ---
+
+k create generic todo-web-application-secrets --from-literal=RDS_PASSWORD=dummytodos
+
+vi todo-web-application-deployment.yaml
+```
+valueFrom:
+  secretKeyRef:
+    key: RDS_PASSWORD
+    name: todo-web-application-secret
+
+```
+
+강의에서는 valueFrom\secret 으로 입력했는데, 최근 버전에서는 secretKetRef 로 지시어가 바뀐걸로 보인다.
 
 
 ## Step12. MySQL DB 용으로 ClusterIP 쿠버네티스 서비스 생성하기
 ---
 
 
+mysql-service.yaml
+ClusterIP 는 클러스터 외부의 사람들은 데이터베이스에 접근하지 못하도록 한다.
 
