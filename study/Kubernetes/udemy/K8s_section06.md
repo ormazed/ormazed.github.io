@@ -1,4 +1,4 @@
-# Section06. MySQL - 웹 어플리케이션으로 K8S & Docker 
+ㅣ# Section06. MySQL - 웹 어플리케이션으로 K8S & Docker 
 
 ## Step01. MySQL 코드 검토
 ---
@@ -175,6 +175,22 @@ Volume == PV == PVC == POD
 
 ## Step10. 쿠버네티스로 설정 Maps 사용하기
 ---
+
+configMap 생성 명령어
+k create configmap todo-web-application-config --from-literal=RDS_DB_NAME=todos
+
+생성한 configMap 을 연결하는 방법
+vi todo-web-application-deployment.yaml
+```
+valueFrom:
+  configMapKeyRef:
+    key: RDS_DB_NAME
+    name: todo-web-application-config
+```
+
+k sacle deployment todo-web-application --replicas=0
+k scale deployment todo-web-application --replicas=1
+
 
 
 ## Step11. 쿠버네티스로 Secrets 사용하기
