@@ -104,25 +104,25 @@ kubectl get hpa currency-exchange -o yaml > hpa_currency-ex.yaml
 <details>
 <summary>접기/펼치기</summary>
   
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: currency-exchange
-  namespace: default
-spec:
-  maxReplicas: 3
-  metrics:
-  - resource:
-      name: cpu
-      target:
-        averageUtilization: 10
-        type: Utilization
-    type: Resource
-  minReplicas: 1
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: currency-exchange
+apiVersion: autoscaling/v2   
+kind: HorizontalPodAutoscaler   
+metadata:   
+  name: currency-exchange   
+  namespace: default   
+spec:   
+  maxReplicas: 3   
+  metrics:   
+  - resource:   
+      name: cpu   
+      target:   
+        averageUtilization: 10   
+        type: Utilization   
+    type: Resource   
+  minReplicas: 1   
+  scaleTargetRef:   
+    apiVersion: apps/v1   
+    kind: Deployment   
+    name: currency-exchange   
 </details>
 
 ## Step07. 쿠버네티스 클러스터 삭제
