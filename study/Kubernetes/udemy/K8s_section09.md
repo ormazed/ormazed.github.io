@@ -10,9 +10,9 @@
 - `Stackdriver`
 로그를 살피고 여러 마이크로서비스에서 요청을 추적하는 등의 다양한 옵션을 제공
 
-> 강의에서 stack driver 를 다루길래 강의를 따라 cluster 생성할 때 stack driver 를 설정하려고 한참 찾았는데 보이지 않았다.
-> 알고 보니까 지금 내가 사용하고 있는 GKE Cluster 에서는 더 이상 stack driver 를 지원하고 있지 않는다.
-> 참고 : https://cloud.google.com/kubernetes-engine/docs/how-to/config-logging-monitoring?hl=ko
+> 강의에서 stack driver 를 다루길래 강의를 따라 cluster 생성할 때 stack driver 를 설정하려고 한참 찾았는데 보이지 않았다.   
+> 알고 보니까 지금 내가 사용하고 있는 GKE Cluster 에서는 더 이상 stack driver 를 지원하고 있지 않는다.   
+> 참고 : https://cloud.google.com/kubernetes-engine/docs/how-to/config-logging-monitoring?hl=ko   
 
 |기존 설정	|기존 create 인수|기존 update 인수|새로운 create 및 update 인수
 |---|---|---|---|
@@ -23,20 +23,20 @@
 
 ** 강의가 어떻게 돌아가나 상황을 보고, 현재 버전에 맞춰서 조정하던가 아니면 구경만 하던가 결정해야겠다.
 
-- 강의에서는 Stackdriver 를 다룬다고 하지만, 현재 버전에서는 Operations 라고 불리며, 일부 수정이 발생
+- 강의에서는 Stackdriver 를 다룬다고 하지만, 현재 버전에서는 Operations 라고 불리며, 일부 수정이 발생.   
   https://cloud.google.com/products/operations?hl=ko
 
-(1) Google Cloud 콘솔의 탐색 패널에서 Kubernetes Engine을 선택한 후 클러스터를 선택 -> Kubernetes 클러스터로 이동
-(2) Kubernetes Cluster 생성(만들기를 클릭)
-(3) Standard 모드로 구성을 클릭(간편 모드에서는 생성 불가)
-(4) 탐색창의 클러스터에서 기능을 클릭
-(5) 작업 아래에서 수집하려는 로그 및 측정항목을 선택
--> 새 클러스터의 경우 Cloud Logging 및 Cloud Monitoring이 기본적으로 사용 설정됩니다.
--> 수집되는 로그를 변경하려면 Cloud Logging의 구성요소 메뉴를 클릭하고 로그를 수집하려는 구성요소를 선택합니다.
--> 수집되는 측정항목을 변경하려면 Cloud Monitoring의 구성요소 메뉴를 클릭하고 측정항목을 수집할 구성요소를 선택합니다.
--> Cloud Logging 통합을 사용 중지하려면(감사 로그 제외) Cloud Logging 사용 설정 체크박스를 선택 취소합니다.
--> Cloud Monitoring 통합을 사용 중지하려면 Cloud Monitoring 사용 설정 체크박스를 선택 취소합니다.
--> -> Google Cloud Managed Service for Prometheus를 사용 설정하려면 Google Cloud Managed Service for Prometheus 사용 설정 체크박스(1.21.4-gke.300 이상 필요)를 선택합니다. 이 체크박스는 구성이 필요한 관리되는 수집기를 사용 설정합니다.
+(1) Google Cloud 콘솔의 탐색 패널에서 Kubernetes Engine을 선택한 후 클러스터를 선택 -> Kubernetes 클러스터로 이동   
+(2) Kubernetes Cluster 생성(만들기를 클릭)   
+(3) Standard 모드로 구성을 클릭(간편 모드에서는 생성 불가)   
+(4) 탐색창의 클러스터에서 기능을 클릭   
+(5) 작업 아래에서 수집하려는 로그 및 측정항목을 선택   
+-> 새 클러스터의 경우 Cloud Logging 및 Cloud Monitoring이 기본적으로 사용 설정됩니다.   
+-> 수집되는 로그를 변경하려면 Cloud Logging의 구성요소 메뉴를 클릭하고 로그를 수집하려는 구성요소를 선택합니다.   
+-> 수집되는 측정항목을 변경하려면 Cloud Monitoring의 구성요소 메뉴를 클릭하고 측정항목을 수집할 구성요소를 선택합니다.   
+-> Cloud Logging 통합을 사용 중지하려면(감사 로그 제외) Cloud Logging 사용 설정 체크박스를 선택 취소합니다.   
+-> Cloud Monitoring 통합을 사용 중지하려면 Cloud Monitoring 사용 설정 체크박스를 선택 취소합니다.   
+-> -> Google Cloud Managed Service for Prometheus를 사용 설정하려면 Google Cloud Managed Service for Prometheus 사용 설정 체크박스(1.21.4-gke.300 이상 필요)를 선택합니다. 
 
 07-currency-exchange-stackdriver\pom.xml 
 아래와 같은 변경사항이 발생했다고 하는데, 아잇.. 이거 stackdriver 없는데 호환되려나..?
@@ -63,15 +63,17 @@ spring.cloud.gcp.trace.enabled=false <-- GCP 관련 내용은 Loggign 하지 않
 ## Step03. 구글 클라우드 계정에서 Stackdriver API 활성화하기
 ---
 
+->  https://cloud.google.com/products/operations?hl=ko
+위 경로를 보니까 최근 버전에서는 Cluster 를 생성할 때, logging 활성화를 해줬으면 딱히 뭘하지 않아도
+`GKE 클러스터 대시보드` 에서 생성한 GKE Cluster 의 내용이 확인되는 것으로 확인된다.
 
-## Step04.
+## Step04. 스프링부트 마이크로서비스 배치 및 구글 Stackdriver 트레이싱 기능 탐색하기
+
+
+## Step05. 구글 Stackdriver 오류 보고 및 로그 기록 기능 탐색하기.
 ---
 
 
-## Step05.
----
 
 
-## Step05.
----
 
