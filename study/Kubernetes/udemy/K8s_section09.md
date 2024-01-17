@@ -63,9 +63,8 @@ spring.cloud.gcp.trace.enabled=false <-- GCP 관련 내용은 Loggign 하지 않
 ## Step03. 구글 클라우드 계정에서 Stackdriver API 활성화하기
 ---
 
-->  https://cloud.google.com/products/operations?hl=ko
-위 경로를 보니까 최근 버전에서는 Cluster 를 생성할 때, logging 활성화를 해줬으면 딱히 뭘하지 않아도
-`GKE 클러스터 대시보드` 에서 생성한 GKE Cluster 의 내용이 확인되는 것으로 확인된다.
+->  https://cloud.google.com/products/operations?hl=ko   
+위 경로를 보니까 최근 버전에서는 Cluster 를 생성할 때, logging 활성화를 해줬으면 딱히 뭘하지 않아도`GKE 클러스터 대시보드` 에서 생성한 GKE Cluster 의 내용이 확인되는 것으로 확인된다.   
 
 ## Step04. 스프링부트 마이크로서비스 배치 및 구글 Stackdriver 트레이싱 기능 탐색하기
 
