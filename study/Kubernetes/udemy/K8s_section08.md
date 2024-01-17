@@ -59,8 +59,28 @@ kubectl create configmap currency-conversion --from-literal=YOUR_PROPERTY==value
 ## Step05. 쿠버네티스의 오토 스케일링
 ---
 
+오토스케일링 방법
+(1) 노드 - 수평
+(2) 파드 - 수평
+(3) 스펙증가 - 수직
 
-## Step06. 쿠버네티스 수평 파드 오토 스케일링 수해ㅐㅇ
+```
+gcloud container clusters ccreate example-cluster \
+
+--zone us-centrall-a \
+--node-locations us-centrall-a,us-centrall-b,us-centrall-f \
+--num-nnodes 2 --enable-autoscaling --min-node 1 --max-node 4
+```
+
+gcloud container clusters create CLUSTER_NAME --enable-vertical-pod-autoscaling --cluster-version=?
+gcloud contaeinr clusters update CLUSTER-NAME --enable-vvertical-ppod-autoscaling
+
+### COnfigure VPA
+
+
+
+
+## Step06. 쿠버네티스 수평 파드 오토 스케일링 수행
 ---
 
 
