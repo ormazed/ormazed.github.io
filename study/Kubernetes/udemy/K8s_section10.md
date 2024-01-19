@@ -1,10 +1,12 @@
 # Section10. 쿠버네티스 내 자바스프링부터 마이크로 서비스와 lstio 통합하기
-## Step01. 
+## Step01. istio 활용하여 새로운 쿠버네티스 클러스 생성하기
 ---
 
-## Step02.istio Service 메시, 사이크카 패턴
+## Step02. istio Service 메시, 사이크카 패턴
 ---
 
+
+## Step03. 쿠버네티스 클러스터에 istio 설치하기 - CRD 및 istio 컴포넌트
 참고
 : https://cloud.google.com/learn/what-is-istio?hl=ko
 : https://istio.io/latest/docs/setup/install/
@@ -14,15 +16,16 @@ kubectl create namespace istio-system
 curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.2.2 sh -
 for i in install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f $i; done
 ``` 
+https://github.com/ormazed/ormazed.github.io/blob/main/study/Kubernetes/udemy/%EC%A0%95%EB%A6%AC/error/error_section10.md
 
-
+## Step04. istio 설치 검토 및 사이드카 패턴을 활용한 스프링부터 앱 배치
+## Step05.        
+## Step0
+## Step0
+## Step0
+## Step0
+## Step0
 ## Step15. lstio 를 활용한 쿠버네티스 클러스터 삭제하기
-
-
-
-
-
-
 
 
 ---
