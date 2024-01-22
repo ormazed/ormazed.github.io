@@ -15,7 +15,19 @@
 ##### Step14. 스프링 부트 마이크로서비스 트레이싱을 Istio와 Jaegar로 배포하
 ##### Step15. lstio 를 활용한 쿠버네티스 클러스터 삭제하기
 ---
+정리할 것
+```
+Service Mesh 란 무엇인가
+Istio 란 무엇인가
+- Istio Component 에는 어떤 것이 존재하는 가
+- Istio GW 란 무엇인가
+Kiali 란 무엇인가
+Grapahana 란 무엇인가
+Prometheus 란 무엇인가
+Jaeger 란 무엇인가
 
+Istio 와 Kiali/Graphana/Prometheus/Jaeger 의 관계는 무엇인가.
+```
 
 작업 내용 요약
 : 강의에서 제공해준 istio 같은 경우 버전이 1.2 버전인데, 현재 제공되고 있는 GKE Cluster 버전과는 호환이 되지 않아서 불가피하게 최신 버전 설치를 할 수밖에 없었다.   
