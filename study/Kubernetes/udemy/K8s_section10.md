@@ -3,16 +3,16 @@
 ## Step02. istio Service 메시, 사이크카 패턴
 ## Step03. 쿠버네티스 클러스터에 istio 설치하기 - CRD 및 istio 컴포넌트
 ## Step04. istio 설치 검토 및 사이드카 패턴을 활용한 스프링부터 앱 배치
-## Step05.        
-## Step06.
-## Step07.
-## Step08.
-## Step09.
-## Step10.
-## Step11.
-## Step12.
-## Step13.
-## Step14.
+## Step05. 쿠버네티스 클러스터 규모를 3 노드로 확장하기   
+## Step06. Istio 게이트웨이와 시각화 서비스 이해하기
+## Step07. 기본 배치 전략 - 롤링 업데이트와 재생성
+## Step08. 스프링 부트 어플리케이션의 다양한 버전 셋업하기
+## Step09. 미러링을 위한 도착지 규칙 및 Subsets 구축하기
+## Step10. 쿠버네티스를 활용하여 블루그린과 카나리 배치 수행하기
+## Step11. 스프링 부트 마이크로서비스의 Istio 통합 검토하기
+## Step12. Kiali로 Istio 서비스 메쉬 관찰하기
+## Step13. Graphana and Prometheus로 Istio 서비스 메쉬 관찰하기
+## Step14. 스프링 부트 마이크로서비스 트레이싱을 Istio와 Jaegar로 배포하
 ## Step15. lstio 를 활용한 쿠버네티스 클러스터 삭제하기
 ---
 
