@@ -10,12 +10,13 @@ for i in install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f 
 
 
 ### 내가 취할 수 있는 선택지   
-#### (1) istio 버전이 달라서 발생하는 현상을 방지하기 위해 v1.2.2 의 yaml 을 보수공사한다.   
-#### (2) 강의를 관망한다.   
-#### (3) 최신 버전의 istio 를 설치한다.   
-
-
-### (1) istio v1.2.2 의 yaml 수정
+```
+(1) istio 버전이 달라서 발생하는 현상을 방지하기 위해 v1.2.2 의 yaml 을 보수공사한다.   
+(2) 강의를 관망한다.   
+(3) 최신 버전의 istio 를 설치한다.   
+```
+   
+#### (1) istio v1.2.2 의 yaml 수정
 내 이럴 줄 알았지. crd*.yaml 파일들이 version 호환 및 해당 version 에 맞지않는 yaml 양식으로 명령어 돌리니 난리난다 난리나.
 ```
 CustomResourceDefinition in version "v1" cannot be handled as a CustomResourceDefinition: strict decoding error: unknown field "spec.version"
@@ -32,14 +33,14 @@ yaml 형식이 제법 많이 바뀐거 같은데 그냥 이 강의는 청강만 
 CustomResourceDefinition in version "v1" cannot be handled as a CustomResourceDefinition:
 json: connaot unmarshal object in to Go struct filed CustomResourceDefinitionSpec.spec.versions of type []v1.CustomResourceDefinitionVersion
 ```
-``
+
+ㄴ 지성은 없지만 노가다는 있다. yaml 파일 수정..
+```
 sed -i 's/v1beta1/v1\n/'   
-
 sed -i 's/version:/versions:\n/' 
-
 sed -i 's/v1alpha1/v1\n/' 
 ```
-지성은 없지만 노가다는 있다.
+
 
 
 #### (2) 강의를 관망한다.   
