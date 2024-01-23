@@ -42,6 +42,29 @@ https://github.com/ormazed/ormazed.github.io/blob/main/study/Kubernetes/udemy/%E
 ```
 
 
+
+
+```
+# Kiali
+kubectl port-forward -n istio-system $(kubectl get pod -n istio-system -l app=kiali -o jsonpath='{.items[0].metadata.name}') 20001
+
+
+kubectl get secret -n istio-system kiali
+kubectl create secret generic kiali -n istio-system --from-literal=passpahse=admin --from-literal=username=admin
+```
+
+```
+# Prometheus
+kubectl port-forward -n istio-system $(kubectl get pod -n istio-system -l app=grafana -o jsonpath='{.items[0].metadata.name}') 3000
+```
+
+```
+# Jaeger
+kubectl port-forward -n istio-system $(kubectl get pod -n istio-system -l app=jaeger -o jsonpath='{.items[0].metadata.name}') 16686
+
+```
+
+
 ---
 아니..  왜 잘 되다가 갑자기 gcloud auth login 을 하면 로그인 token 발행 링크 말고도 `START /usr/bin/firefox "https://accounts.google.com/o/oauth2/auth?(중략)` 메세지가 계속 나오냐고..
 갑자기 firefox 브라우저가 뜨면서 white page 가 되네.. 미쳐버리겠다 정말..
