@@ -9,6 +9,30 @@
 
 ---
 
+(CASE0) _ 내가 이거를 어떻게 해결했더라;;; (가물) -> 생긴 요량하니까 java 버전 문제인거 같아서 어떻게 했던거 같은데..   
+jdk1.8 -> jdk11 -> jdk17 다 해봤는데 안되는데.. 아까 전에는 어떻게 한거지..;;   
+-> 어휴 몰라.. 진작 gg 칠껄.. 리눅스가 최고다 정말..   
+
+```
+Caused by: java.lang.NoClassDefFoundError: com/fasterxml/jackson/core/util/JacksonFeature
+        at com.fasterxml.jackson.databind.ObjectMapper.<init>(ObjectMapper.java:655)
+        at com.fasterxml.jackson.databind.ObjectMapper.<init>(ObjectMapper.java:558)
+        at scouterx.webapp.framework.mapper.JerseyMapperProvider.<clinit>(JerseyMapperProvider.java:32)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.glassfish.hk2.utilities.reflection.ReflectionHelper.makeMe(ReflectionHelper.java:1375)
+        at org.jvnet.hk2.internal.ClazzCreator.createMe(ClazzCreator.java:272)
+        at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:366)
+        ... 50 more
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.JacksonFeature
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+        at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+        ... 60 more
+```
 (CASE1)
 ```
  'C:\Program'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다. 라는 메세지와 함께 실행이 되지 않는다.
