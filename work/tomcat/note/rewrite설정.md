@@ -35,4 +35,12 @@ tomcat rewrite docs 내용을 보면 docs 에서도 Apache HTTP Server 의 mod_r
 
 
 
-## 방법2.
+## 방법2. web.xml 방식
+
+이것 때문에 한참 헤맸다.
+(1) HTTP to HTTPS Redirect 설정이 추가되어 있어야한다.
+
+(2) web.xml에 추가
+```
+
+```
