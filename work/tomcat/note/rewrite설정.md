@@ -42,5 +42,31 @@ tomcat rewrite docs 내용을 보면 docs 에서도 Apache HTTP Server 의 mod_r
 
 (2) web.xml에 추가
 ```
+<security-constraint>
+  <web-resource-collection>
+    <web-resource-name>restricted method</web-resource-name>
+    <url-pattern>/*</url-pattern>
+  </web-resource-collection>
+  <auth-constraint/>
+</security-constraint>
+```
 
+HTTPS Connector 에 반드시 redirectPort 가 선언되어 있어야한다.
+
+
+WAS 에 SSL 설정방법
+
+---
+server.xml
+```
+<!-- HTTP Connector -->
+<Connector UIEncoding="UTF-8" bindOnInit="false" ...()... port="8080" protocol="HTTP/1.1" redirectPort="8443" connectionTimeout="20000" />
+
+<!-- HTTPS Connector -->
+<Connector SSLEnabled="true" URIEncoding="UTF-8" ...()... port="8443" redirectPort="8443" protocol="org.apache.coyote.http11.Http11NioProtocol">
+  <SSLHostConfig>
+
+    <Certificate certificateKeystoreFile="ssl/keystore" certificateKeystorePassword="admin1234" type="RSA"/>
+  </SSLHostConfig>
+</Connector>
 ```
