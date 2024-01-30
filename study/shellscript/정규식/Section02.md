@@ -1,4 +1,4 @@
-# Section02
+# Section03
 ## Quantifiers
 `?`
 `+`
@@ -34,6 +34,16 @@ Use a '-' to create a range
 - 중간에 (. ? ! ) 가 사용되지는 않는다면 뭐가와도 가능 +   
 - 마지막에는 (. ? !) 로 끝나면 된다.   
 (ex) ABddddC! -> A / BdddddC / !   
+
+##### Exercies
+- Match a string that represents a binary number `/[01]+/;`
+- Apostrophe is an option for all but the first letter. First letter can be lowercase or capital; othere letters must be lowercase. The word must contain one or more letters. ``
+- Match a telephone number of format : 555-555-5555 `/[0-9]{3}-[0-9]{3}-[0-9]{4}/`
+- Match strings that are at least six characters and don't contain the letter A (uppercase or lowercase) : /[^aA]{6,}/;
+
+
+
+
 
 
 
