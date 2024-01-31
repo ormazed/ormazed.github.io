@@ -6,6 +6,10 @@ public class Person {
     public int age;
     public String phone;
 
+/*    public Person(){
+      // Constructor 가 내부적으로 생략되어 있다.      
+    }
+*/
     public void play(){
         System.out.println("운동을 한다.");
     }
