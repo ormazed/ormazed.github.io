@@ -13,3 +13,7 @@ SET
 - EX |PX|EXAT|PXAT|KEEPTTL : 이 값이 expire 되는 옵션
 - NX | XX : key 가 생성되는 조건
 - GET  : Return the previous value stored at this key.
+
+
+레디스는 기본적으로 용도가 캐싱 서버이기 때문에 자동 만료시간에 대한 설정이 존재한다.   
+-> 오래된 데이터의 캐싱상태 유지를 막고 메로리가 부족하지 않도록 관리하기 위함
