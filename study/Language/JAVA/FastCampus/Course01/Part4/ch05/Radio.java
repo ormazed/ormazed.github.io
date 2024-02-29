@@ -1,6 +1,7 @@
 package fc.java.poly;
 
 public class Radio extends RemoCon {
+    // Radio 이기 때문에 Internet 이 동작해서는 안된다.
     @Override
     public void chUp() {
         System.out.println("Radio의 동작 : chUp");
