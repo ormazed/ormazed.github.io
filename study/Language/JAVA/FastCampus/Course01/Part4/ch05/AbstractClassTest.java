@@ -1,6 +1,6 @@
 package fc.java.part4;
 
-import fc.java.poly.Animal;
+import fc.java.poly.Animal; // Anaimal2.java
 import fc.java.poly.Cat;
 import fc.java.poly.Dog;
 
