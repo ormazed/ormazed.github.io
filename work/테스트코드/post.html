@@ -1,0 +1,36 @@
+// 브라우저에서 JavaScript를 사용하여 AJAX를 통해 POST 요청을 보내는 간단한 예제
+// 확인방법 : access log 에서 POST Method 가 확인된다.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST Request Example</title>
+</head>
+<body>
+    <h1>POST Request Example</h1>
+    <button onclick="sendPostRequest()">Send POST Request</button>
+    <script>
+        function sendPostRequest() {
+            // 데이터 객체 생성 (폼 데이터 형식)
+            const formData = new FormData();
+            formData.append('data', '전송할데이터');
+
+            // POST 요청을 보내는 fetch 함수 사용
+            fetch('http://localhost:포트번호/프로젝트이름/test.jsp', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Response:', data);
+                // 여기에서 응답 처리 로직을 추가할 수 있습니다.
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
