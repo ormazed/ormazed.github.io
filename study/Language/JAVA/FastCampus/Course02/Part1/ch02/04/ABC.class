@@ -1,0 +1,23 @@
+package fc.java.model2;
+
+public class A {
+    public void display(){
+        System.out.println("I'm A");
+    }
+}
+
+package fc.java.model2;
+
+public class B {
+    public void display(){
+        System.out.println("I'm B");
+    }
+}
+
+package fc.java.model2;
+
+public class C {
+    public void display(){
+        System.out.println("I'm C");
+    }
+}
