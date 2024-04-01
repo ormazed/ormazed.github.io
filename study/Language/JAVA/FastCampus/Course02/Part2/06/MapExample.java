@@ -26,7 +26,9 @@ public class MapExample {
 
         // 전체 데이터 출력
         for(Map.Entry<String, Integer> entry : studentScore.entrySet()){
-            System.out.println(entry);
+            System.out.println(entry.getKey() + "'s scoure : " + entry.getValue());
         }
+        /*이 메서드는 Map에 포함된 키-값 쌍(엔트리)들을 표현하는 Set을 반환합니다. 
+        각 엔트리는 Map.Entry 인터페이스의 인스턴스입니다.*/
     }
 }
