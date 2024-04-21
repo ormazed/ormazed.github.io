@@ -1,4 +1,4 @@
-package com.example.restapi.model;
+package com.example.restapi.model.restapi.model;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
