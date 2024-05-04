@@ -1,0 +1,20 @@
+[
+{
+"id": 1,
+"name": "JAVA",
+"category": "IT",
+"amount": 10000
+},
+{
+"id": 2,
+"name": "Python",
+"category": "IT",
+"amount": 20000
+},
+{
+"id": 3,
+"name": "Sapiens",
+"category": "Social",
+"amount": 30000
+}
+]
