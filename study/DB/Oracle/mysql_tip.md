@@ -11,3 +11,8 @@ To disable safe mode, toggle the option in Preferences -> SQL Editor and reconne
 set sql_safe_updates=0;
 ```
 UPDATE 명령어를 실행하기 전에 위의 SQL 문을 추가한 상태로 실행하게 되면 일시적으로 해당 모드를 해제하고 사용할 수 있게 된다.   
+
+
+### DROP vs TRUNCATE
+- DROP : DB 시스템에서 테이블 자체를 삭제하는 것
+- TRUNCATE : 테이블 내의 데이터만 삭제하는 것
