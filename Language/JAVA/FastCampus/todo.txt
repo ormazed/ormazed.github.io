@@ -1,0 +1,4 @@
+해야할 것
+- 실전프로젝트 과제
+- simpleboard board/post => 추상화 하기
+- 객체지향 학습
