@@ -1,0 +1,46 @@
+package org.delivery.api.config.web;
+
+import lombok.RequiredArgsConstructor;
+import org.delivery.api.interceptor.AuthorizationInterceptor;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.List;
+
+@RequiredArgsConstructor
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+
+    private final AuthorizationInterceptor authorizationInterceptor;
+
+    // 일반적으로는 인증되지 않은 종류는 PASS 되면 안되지만, 회원가입/약관 등과 같이 인증을 해서는 안되는 종류의 API 도 존재한다
+    // 이러한 종류는 exclude 처리를 해줘야한다.
+    // openapi -> 검증 x 그 외 -> 검증
+
+    private List<String> OPEN_API = List.of(
+            "/open-api/**"
+    );
+
+    private List<String> DEFAULT_EXCLUDE = List.of(
+            "/",
+            "favicon.ico",
+            "/error"
+    );
+
+    private List<String> SWAGGER = List.of(
+            "/swagger-ui.html",
+            "/swagger-ui/**",
+            "/v3/api-docs/**"
+    );
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(authorizationInterceptor)
+                .excludePathPatterns(OPEN_API)
+                .excludePathPatterns(DEFAULT_EXCLUDE)
+                .excludePathPatterns(SWAGGER)
+        ;
+    }
+
+}
