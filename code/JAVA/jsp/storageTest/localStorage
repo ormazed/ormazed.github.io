@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Test</title>
+</head>
+<body>
+    <h1>Local Storage Test</h1>
+    <form id="dataForm">
+        <label for="data">Enter Data:</label>
+        <input type="text" id="data" name="data">
+        <button type="submit">Store in Local Storage</button>
+    </form>
+    <button id="getDataBtn">Get Local Storage Data</button>
+    <button id="clearDataBtn">Clear Local Storage Data</button>
+
+    <script>
+        document.getElementById("dataForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var inputData = document.getElementById("data").value;
+            localStorage.setItem("userData", inputData);
+            alert("Data stored in Local Storage: " + inputData);
+        });
+
+        document.getElementById("getDataBtn").addEventListener("click", function() {
+            var storedData = localStorage.getItem("userData");
+            if (storedData) {
+                alert("Data retrieved from Local Storage: " + storedData);
+            } else {
+                alert("No data found in Local Storage.");
+            }
+        });
+
+        document.getElementById("clearDataBtn").addEventListener("click", function() {
+            localStorage.removeItem("userData");
+            alert("Data cleared from Local Storage.");
+        });
+    </script>
+</body>
+</html>
